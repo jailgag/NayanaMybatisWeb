@@ -11,7 +11,7 @@
 		<result property="age" column="AGE" />
 		<result property="email" column="EMAIL" />
 		<result property="phone" column="PHONE" />
-		<result property="addrress" column="ADDRESS" />
+		<result property="address" column="ADDRESS" />
 		<result property="hobby" column="HOBBY" />
 		<result property="enrollDate" column="ENROLL_DATE" />
 	</resultMap>

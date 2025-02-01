@@ -24,7 +24,7 @@ public class Member {
 	//에러나서 일단9개짜리 만듬!!아니면 다시지우기!지웠음!!
 	
 
-
+	
 
 	//MemberDAO꺼 login 3개!!
 	public Member(String memberId, String memberName, String email) {
@@ -34,6 +34,22 @@ public class Member {
 		this.email = email;
 	}
 
+
+
+	//SingUpServlet에서 넘어옴!9개!!
+	public Member(String memberId, String memberPwd, String memberName, String gender, int age, String email,
+			String phone, String address, String hobby) {
+		super();
+		this.memberId = memberId;
+		this.memberPwd = memberPwd;
+		this.memberName = memberName;
+		this.gender = gender;
+		this.age = age;
+		this.email = email;
+		this.phone = phone;
+		this.address = address;
+		this.hobby = hobby;
+	}
 
 
 

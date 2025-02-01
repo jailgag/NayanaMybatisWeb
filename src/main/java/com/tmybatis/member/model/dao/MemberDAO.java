@@ -4,7 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+//The import java.sql.SQLException is never used??
+//상관없음!!
 import org.apache.ibatis.session.SqlSession;
 
 import com.tmybatis.member.model.vo.Member;
