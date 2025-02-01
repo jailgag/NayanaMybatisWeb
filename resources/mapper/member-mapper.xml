@@ -18,4 +18,16 @@
 	<select id="selectOneByLogin" resultMap = "memberResultMap"> 
   		SELECT * FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId} AND MEMBER_PWD = #{memberPwd}
   	</select>
+  	<!-- insert적고 엔터 치면 
+  	id부분에 DAO? 메소드 명을 적어주기
+  	그래야 안헷갈린다
+  	그담 무슨 파라메터? 넣어줘야 하는데 자동으로 들어가서 안넣어주고!
+  	이전 (?,?,?,?,?,?,?,?,?,DEFAULT)
+  	? 에 #{}넣어줌!!
+  	gender부분부터는 소문자??
+  	필드명으로!!!!!Member private 다음 적은거!!
+  	그래야 에러 없음 500에러 떠서 이번엔 vo에 Member 필드명으로 복붙!!]-->
+  	<insert id="insertMember">
+  		INSERT INTO MEMBER_TBL VALUES(#{memberId},#{memberPwd},#{memberName},#{gender},#{age},#{email},#{phone},#{address},#{hobby},DEFAULT)
+  	</insert>
 </mapper>

@@ -30,6 +30,13 @@ public class MemberDAO {
 		Member result = conn.selectOne("MemberMapper.selectOneByLogin",member);
 		return result;
 	}
+	//MemberService에서 넘어옴!!
+	public int insertMember(SqlSession conn, Member member) {
+		// TODO Auto-generated method stub
+		//()안에 "MemberMapper.(insert id부분을 적어준다!!)"
+		int result = conn.insert("MemberMapper.insertMember",member); //옆에코드는 member-mapper.xml에서 ()안에 적어주기!!
+		return result ;
+	}
 		
 	
 	

@@ -72,5 +72,12 @@ public class MemberService {
 //		}
 //		return result;
 	}
+
+	//SingUpServlet에서 넘어옴!!
+	public int insertMember(Member member) {
+		// TODO Auto-generated method stub
+		int result = mDao.insertMember(conn, member);
+		return result;
+	}
 	
 }

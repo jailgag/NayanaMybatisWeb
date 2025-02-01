@@ -41,7 +41,7 @@ public class SqlSessionTemplate {
 			SqlSessionFactory factory = builder.build(is);
 			
 			//7. 아래코드적고!!xml파일작성후!6에 경로적어주고!!8로이동!!
-			session = factory.openSession(true);
+			session = factory.openSession(true);//옆에()안에 true안적어주면 자동커밋?안됨!!
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
