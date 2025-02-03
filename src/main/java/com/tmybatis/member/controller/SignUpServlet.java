@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.tmybatis.member.common.NavigationUtil;
 import com.tmybatis.member.model.service.MemberService;
 import com.tmybatis.member.model.vo.Member;
 
@@ -57,6 +58,9 @@ public class SignUpServlet extends HttpServlet {
 		}else {
 			request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
 			.forward(request, response);
+			NavigationUtil.navigateToError(request, response, "500", "서비스처리가 완료되지 않았습니다");
+			//request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
+			//.forward(request, response);
 		}
 		
 	}

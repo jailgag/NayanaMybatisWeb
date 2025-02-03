@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>서비스에러</title>
+<title>제주의 꿈 -에러페이지</title>
 	 	<link rel="stylesheet" href="../resources/css/reset.css">
         <link rel="stylesheet" href="../resources/css/header.css">
 	 	<link rel="stylesheet" href="../resources/css/footer.css">
@@ -15,12 +15,12 @@
 		<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 		<main>
 			<div class="error-container">
-		<h1	class="error-title">404</h1>
-		<p class="error-message">
-			찾으시는 페이지가 없습니다. 다시 시작하세요
-		</p>
-		<a href="/" class="home-button">홈으로 돌아가기</a>
-		</div>
+				<h1	class="error-title">${errorCode }</h1>
+				<p class="error-message">
+					${errorMessage }
+				</p>
+				<a href="/" class="home-button">홈으로 돌아가기</a>
+			</div>
 		</main>
 		<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 	</div>

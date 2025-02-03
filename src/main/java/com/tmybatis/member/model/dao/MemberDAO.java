@@ -16,6 +16,7 @@ public class MemberDAO {
 	//Service에서 코드작성후 아래쓴코드 지우고(주석처리함!) 다시
 	//Service에서 메소드만들어서 여기로 넘어옴!!
 	//그리고 아래코드 작성!!
+	//1.로그인
 	public Member selectOneByLogin(SqlSession conn, Member member) {
 		// TODO Auto-generated method stub
 		//아래코드 Member result = conn.selectOne작성후
@@ -39,7 +40,7 @@ public class MemberDAO {
 	}
 	public Member selecOneById(SqlSession conn, String memberId) {
 		// TODO Auto-generated method stub
-		Member member = conn.selectOne("MemberMapper.selectOneBylogin",memberId);
+		Member member = conn.selectOne("MemberMapper.selectOneById",memberId); //selectOneBylogin을 selectOneById로수정!!
 		return member;
 	}
 	//업데이트서블랏
@@ -51,7 +52,8 @@ public class MemberDAO {
 	}
 	public int deleteMember(SqlSession conn, String memberId) {
 		// TODO Auto-generated method stub
-		int result = conn.delete("MemberMapper.deleteMember",memberId); //옆에코드는 member-mapper.xml에서 ()안에 적어주기!!
+		//delete를 업데이트로 고침!!???
+		int result = conn.update("MemberMapper.deleteMember",memberId); //옆에코드는 member-mapper.xml에서 ()안에 적어주기!!
 		return result ;
 		
 		

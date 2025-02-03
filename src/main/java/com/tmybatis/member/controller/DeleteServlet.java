@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+import com.tmybatis.member.common.NavigationUtil;
 import com.tmybatis.member.model.service.MemberService;
 import com.tmybatis.member.model.vo.Member;
 
@@ -39,12 +40,13 @@ public class DeleteServlet extends HttpServlet {
 			String memberId = searchOne.getMemberId();
 			int result = mService.deleteMember(memberId);
 			if(result > 0) {
-				//성공
+				//성공시 로그아웃동작하기
 				response.sendRedirect("/member/logout");
 			}else {
-				//실패
-				request.getRequestDispatcher("")
-				.forward(request, response);
+				//실패시 에러페이지 이동
+				NavigationUtil.navigateToError(request, response, "500", "서비스가 완료되지않았습니다");
+				//request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
+				//.forward(request, response);
 			}
 		}
 	}

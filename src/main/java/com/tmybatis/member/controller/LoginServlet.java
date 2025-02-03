@@ -2,6 +2,7 @@ package com.tmybatis.member.controller;
 
 import java.io.IOException;
 
+import com.tmybatis.member.common.NavigationUtil;
 import com.tmybatis.member.model.service.MemberService;
 import com.tmybatis.member.model.vo.Member;
 
@@ -61,10 +62,13 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("/");
 		}else {
 			//실패
-			request.setAttribute("error", 404);
-			request.setAttribute("errorMessage", "데이터가 존재하지않습니다");
-			request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
-			.forward(request, response);
+//			request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
+//			.forward(request, response);
+			NavigationUtil.navigateToError(request, response, "404", "데이터가 존재하지 않습니다");
+//			request.setAttribute("error", 404);
+//			request.setAttribute("errorMessage", "데이터가 존재하지않습니다");
+//			request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
+//			.forward(request, response);
 		}
 	}
 

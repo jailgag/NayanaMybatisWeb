@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.tmybatis.member.common.NavigationUtil;
 import com.tmybatis.member.model.service.MemberService;
 import com.tmybatis.member.model.vo.Member;
 
@@ -47,11 +48,14 @@ public class UpdateServlet extends HttpServlet {
 		MemberService mService = new MemberService();
 		int result = mService.updateMember(member); //다시 작성!!
 		if(result > 0) {
-			//성공
-			response.sendRedirect("/member/mypage"); // 마이페이지로 이동안됨!!
+			//성공시 메인페이지(또는 마이페이지)이동
+			response.sendRedirect("/member/mypage"); // 마이페이지로 이동오키!!
 		}else {
 			request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
 			.forward(request, response);
+			NavigationUtil.navigateToError(request, response, "500", "서비스가 완료되지 않았습니다");
+			//request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
+			//.forward(request, response);
 		}
 	}
 

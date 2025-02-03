@@ -18,7 +18,7 @@
 	<select id="selectOneByLogin" resultMap = "memberResultMap"> 
   		SELECT * FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId} AND MEMBER_PWD = #{memberPwd}
   	</select>
-  	<select id="selectOneBylogin" resultMap = "memberResultMap">
+  	<select id="selectOneById" resultMap = "memberResultMap">
   		SELECT * FROM MEMBER_TBL WHERE MEMBER_ID =  #{memberId}
   	</select>
   	<!-- insert적고 엔터 치면 

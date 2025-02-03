@@ -21,14 +21,14 @@ main {
 	font-size: 120px;
 	color: #045;
 	margin: 0;
-	line-height:1;
-	font-family:'Marienda' cursive
+	line-height: 1;
+	font-family:'Merienda' cursive
 }
 
 .error-message {
 	font-size: 18px;
 	color:#666;
-	margin-bottom:30px;
+	margin-bottom: 30px;
 	line-height: 1.6;
 }
 

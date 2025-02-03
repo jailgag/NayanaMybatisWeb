@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+import com.tmybatis.member.common.NavigationUtil;
 import com.tmybatis.member.model.service.MemberService;
 import com.tmybatis.member.model.vo.Member;
 
@@ -35,11 +36,12 @@ public class MypageServlet extends HttpServlet {
 		MemberService mService = new MemberService();
 		HttpSession session = request.getSession();
 		Member searchOne = (Member)session.getAttribute("result");
-		String memberId = searchOne.getMemberId();
+//		String memberId = searchOne.getMemberId();
 //		String memberId = (String)(request.getSession()).getAttribute("memberId"); //오브젝트라 다운캐스팅이 필요하다!
 //		Member member = mService.selectOneById(memberId);
 		//이코드 다시 복습할때 정리할것!!
-		if( memberId != null) {
+		if( searchOne != null) {
+			String memberId = searchOne.getMemberId();
 			Member member = mService.selectOneById(memberId);
 			if(member != null) {
 				request.setAttribute("member", member);
@@ -49,11 +51,18 @@ public class MypageServlet extends HttpServlet {
 			}else {
 				request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
 				.forward(request, response);
+				NavigationUtil.navigateToError(request, response, "404", "데이터가 존재하지않습니다");
+				
+				//request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
+				//.forward(request, response);
 			}
-		}
-			else {
+		}else {
 				request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
 				.forward(request, response);
+				NavigationUtil.navigateToError(request, response, "404", "로그인이 필요합니다");
+				
+				//request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
+				//.forward(request, response);
 			}
 		
 	}
