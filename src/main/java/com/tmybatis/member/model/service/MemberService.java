@@ -79,5 +79,27 @@ public class MemberService {
 		int result = mDao.insertMember(conn, member);
 		return result;
 	}
+
+	public Member selectOneById(String memberId) {
+		// TODO Auto-generated method stub
+		Member member = mDao.selecOneById(conn, memberId);
+		return member;
+	}
+
+	//마이ㅠㅔ이지 안만듬??
+	public int updateMember(Member member) {
+		// TODO Auto-generated method stub
+		int result = mDao.UpdateMember(conn, member);
+		return result;
+		
+	}
+
+	public int deleteMember(String memberId) {
+		// TODO Auto-generated method stub
+		int result = mDao.deleteMember(conn, memberId);
+		return result;
+		
+	}
+	
 	
 }

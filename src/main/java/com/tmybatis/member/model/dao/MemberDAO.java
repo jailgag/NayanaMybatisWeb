@@ -37,6 +37,25 @@ public class MemberDAO {
 		int result = conn.insert("MemberMapper.insertMember",member); //옆에코드는 member-mapper.xml에서 ()안에 적어주기!!
 		return result ;
 	}
+	public Member selecOneById(SqlSession conn, String memberId) {
+		// TODO Auto-generated method stub
+		Member member = conn.selectOne("MemberMapper.selectOneBylogin",memberId);
+		return member;
+	}
+	//업데이트서블랏
+	public int UpdateMember(SqlSession conn, Member member) {
+		// TODO Auto-generated method stub
+		int result = conn.update("MemberMapper.updateMember",member); //옆에코드는 member-mapper.xml에서 ()안에 적어주기!!
+		return result ;
+		
+	}
+	public int deleteMember(SqlSession conn, String memberId) {
+		// TODO Auto-generated method stub
+		int result = conn.delete("MemberMapper.deleteMember",memberId); //옆에코드는 member-mapper.xml에서 ()안에 적어주기!!
+		return result ;
+		
+		
+	}
 		
 	
 	

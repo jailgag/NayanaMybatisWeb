@@ -61,6 +61,8 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("/");
 		}else {
 			//실패
+			request.setAttribute("error", 404);
+			request.setAttribute("errorMessage", "데이터가 존재하지않습니다");
 			request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
 			.forward(request, response);
 		}

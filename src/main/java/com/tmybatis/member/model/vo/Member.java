@@ -21,10 +21,25 @@ public class Member {
 	
 	
 	
+	
+	
 	//에러나서 일단9개짜리 만듬!!아니면 다시지우기!지웠음!!
 	
 
 	
+	//Update
+	public Member(String memberId, String email, String phone, String address, String hobby) {
+		super();
+		this.memberId = memberId;
+		this.email = email;
+		this.phone = phone;
+		this.address = address;
+		this.hobby = hobby;
+	}
+
+
+
+
 
 	//MemberDAO꺼 login 3개!!
 	public Member(String memberId, String memberName, String email) {
