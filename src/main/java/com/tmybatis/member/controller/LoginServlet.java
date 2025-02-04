@@ -62,6 +62,7 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("/");
 		}else {
 			//실패
+			//아래코드있으니 우선순위가 있어서 그런지 안나오고 주석처리하니 에러 페이지메세지 나옴!!
 //			request.getRequestDispatcher("/WEB-INF/views/common/error/error.jsp")
 //			.forward(request, response);
 			NavigationUtil.navigateToError(request, response, "404", "데이터가 존재하지 않습니다");

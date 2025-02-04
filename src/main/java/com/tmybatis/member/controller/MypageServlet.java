@@ -34,7 +34,13 @@ public class MypageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		MemberService mService = new MemberService();
+		//HttpSession 객체를 가져옴!!
 		HttpSession session = request.getSession();
+		//세션에 저정된 정보를 가져와야함. getAttribute()메소드 사용
+		//getAttribute() 메소드는 리턴형이 Object, 그런데 필요한 것은 Member이므로
+		//member로 형변환해줌!!
+		
+		//object obj = session.getAttribute("result");
 		Member searchOne = (Member)session.getAttribute("result");
 //		String memberId = searchOne.getMemberId();
 //		String memberId = (String)(request.getSession()).getAttribute("memberId"); //오브젝트라 다운캐스팅이 필요하다!
