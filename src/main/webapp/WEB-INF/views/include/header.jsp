@@ -13,7 +13,7 @@
                         <li><a href="#">단체여행</a></li>
                         <li><a href="#">맞춤여행</a></li>
                         <li><a href="#">갤러리</a></li>
-                        <li><a href="#">문의하기</a></li>
+                        <li><a href="/notice/list">문의하기</a></li>
                         
                         <!-- memberId가 없으면 로그인버튼보이고 -->
                         <!-- memberId가 있으면! 로그인이 안보이도록해야함 -->

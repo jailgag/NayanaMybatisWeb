@@ -2,25 +2,31 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
-  
+
 <configuration>
 	<settings>
-	<!-- 널 값이 발생할 경우 빈칸이 아닌 null로 인식하라 -->
-	<setting name="jdbcTypeForNull" value="NULL"/>
-</settings>
-<environments default="development">
-    <environment id="development">
-      <transactionManager type="JDBC"></transactionManager>
-      <dataSource type="POOLED">
-        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-        <property name="username" value="KH"/>
-        <property name="password" value="KH"/>
-      </dataSource>
-    </environment>
-  </environments>
-  <mappers>
-    <mapper resource="mapper/member-mapper.xml"/>
-    <mapper resource="mapper/Notice-mapper.xml"/>
-  </mappers>
+		<!-- 널 값이 발생할 경우 빈칸이 아닌 null로 인식하라 -->
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.tmybatis.notice.model.vo.Notice"
+			alias="Notice" />
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver"
+					value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url"
+					value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="KH" />
+				<property name="password" value="KH" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mapper/member-mapper.xml" />
+		<mapper resource="mapper/notice-mapper2.xml" />
+	</mappers>
 </configuration>
