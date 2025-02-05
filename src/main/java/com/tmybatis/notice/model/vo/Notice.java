@@ -17,7 +17,16 @@ public class Notice {
 	public Notice() {}
 
 	
-	
+	//modify서블릿에서 넘어옴!!
+	public Notice(int noticeNo, String noticeSubject, String noticeContent) {
+		super();
+		this.noticeNo = noticeNo;
+		this.noticeSubject = noticeSubject;
+		this.noticeContent = noticeContent;
+	}
+
+
+
 	//WriteServlet꺼!!3개!!
 	public Notice(String noticeSubject, String noticeContent, String noticeWriter) {
 		super();

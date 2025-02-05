@@ -29,7 +29,7 @@ main {
 }
 
 .notice-table td {
-	padding:12px;
+	padding: 12px;
 	border-bottom: 1px solid #ddd;
 }
 
@@ -53,34 +53,11 @@ main {
 }
 
 .notice-table .views {
-	width: 15%;
-	text-align: center;
-	
-}
-
-
-
-.notice-table .title a:hover{
-	color: #045;
-	text-decoration: underline;
-}
-
-.notice-table .writer {
-	width: 15%;
-	text-align: center;
-}
-
-.notice-table .date{
-	width: 15%;
-	text-align: center;
-}
-
-.notice-table .views {
 	width: 10%;
 	text-align: center;
 }
 
-.notice-table .tbody tr:hover {
+.notice-table tbody tr:hover{
 	background-color: #f8f8f8;
 }
 
@@ -97,7 +74,7 @@ main {
 	justify-content: center;
 	align-items: center;
 	padding: 8px 12px;
-	border: 1px soild #ddd;
+	border: 1px solid #ddd;
 	color: #045;
 	text-decoration: none;
 	min-width: 35px;

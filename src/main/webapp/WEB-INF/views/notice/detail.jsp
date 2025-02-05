@@ -19,34 +19,30 @@
 					<h2 class="notice-title">${notice.noticeSubject }</h2>
 					<div class="notice-info">
 						<span>작성자 : ${notice.noticeWriter }</span>
-						<span>작성일 :${notice.noticeWriter }</span>
+						<span>작성일 :${notice.writeDate }</span>
 						<span>조회: ${notice.viewCount }</span>
 					</div>
-					<div class="notice-content">
-						${notice.noticeContent }
-					</div>
+				</div>
+					<div class="notice-content">${notice.noticeContent }</div>
 					<div class="notice-file">
 						<h4>첨부파일</h4>
 						<a href="#">${notice.attchmentName }</a>
 					</div>
-				</div>
 			</article>
 				<div class="button-group">
 					<div class="admin-button">
-					<a href="/notice/modify?noticeNo = ${notice.noticeNo }" class="btn btn-admin">수정</a>
-					<a href="/notice/delete?noticeNo = ${notice.noticeNo }" class="btn btn-admin">삭제</a>
-					
-					</div>
+					<!-- **아래 쿼리스트링부분띄어쓰기로인해 삭제및 수정이 안됨현상주의** -->
+					<a href="/notice/modify?noticeNo=${notice.noticeNo }" class="btn btn-admin">수정</a>
+					<a href="/notice/delete?noticeNo=${notice.noticeNo }" class="btn btn-admin">삭제</a>
 				</div>
+				<div class="navigation-buttons">
+					<a href="/notice/list" class="btn">목록</a>
+					<a href="#"class="btn">이전글</a>
+					<a href="#"class="btn">다음글</a>
+				</div>
+			</div>
 		</main>
 		<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
-	</div>
-		<div class="navigation-button">
-			<a href="/notice/list" class="btn">목록</a>
-			<a href="#" class="btn">이전글</a>
-			<a href="/notice/delete" class="btn">삭제</a>
-			
-		</div>
-	
-</body>
+		</div>ㄴ
+	</body>
 </html>

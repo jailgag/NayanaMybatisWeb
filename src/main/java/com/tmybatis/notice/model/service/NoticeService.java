@@ -26,25 +26,31 @@ public class NoticeService {
 		
 		return result;
 	}
-
+	//ListServlet에서 넘어옴!!(공지사항조회)
 	public List<Notice> selectListAll() {
 		// TODO Auto-generated method stub
 		List<Notice> nList = nDao.selectList(session);
 		return nList;
 	}
-
+	//3.DetailServlet에서 넘어왔고 !!!공지사항 상세조회!!!
 	public Notice selectOneByNo(int noticeNo) {
 		// TODO Auto-generated method stub
 		Notice notice = nDao.selectOneByNO(session, noticeNo);
 		return notice;
 	}
-
+	//공지사항 삭제! deleteServlet에서 넘어옴!
 	public int deleteNotice(int noticeNo) {
 		// TODO Auto-generated method stub
 		int result = nDao.deleteNotice(session,noticeNo);
 		
 		return result;
 		
+	}
+	//
+	public int updateNotice(Notice notice) {
+int result = nDao.updateNotice(session,notice);
+		
+		return result;
 	}
 	
 		

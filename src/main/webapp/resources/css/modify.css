@@ -7,7 +7,7 @@ main {
 }
 
 .notice-form {
-	border-top: 2px solid #045;
+	border-top: 2px soild #045;
 	border-bottom: 2px solid #045;
 	padding: 30px 20px;
 	background-color: #fff;
@@ -42,18 +42,26 @@ main {
 	height: 200px;
 }
 
-.notice-form .save-btn {
+.form-group .current-files {
+	margin:10px 0;
+	padding: 10px;
+	background-color: #f8f8f8;
+	border-radius: 4px;
+}
+
+.notice-form .modify-btn {
 	display: inline-block;
 	padding: 8px 20px;
 	border: 1px solid #045;
-	background-color: #fff;
-	color: #045;
+	background-color: #045;
+	color: #fff;
 	text-decoration: none;
 	cursor: pointer;
 	
 }
 
-.notice-form .save-btn:hover {
-	background-color: #045;
-	color: #fff;
+.notice-form .modify-btn:hover {
+	opacity: 0.9;
+	--background-color: #fff;
+	--color:	#045;
 }

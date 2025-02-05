@@ -30,15 +30,15 @@ public class DeleteServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		NoticeService nService = new NoticeService();
+		NoticeService nService = new NoticeService(); //비지니스로직!!
 		int noticeNo = (request.getParameter("noticeNo") != null)
-				? Integer.parseInt(request.getParameter("noticeNo")) : 0;
+				? Integer.parseInt(request.getParameter("noticeNo")) : 0; //삼항연산자로 사용한것!
 		int result = nService.deleteNotice(noticeNo);
 		if(result > 0) {
-			//성공
+			//성공시 목록페이지로 이동!
 			response.sendRedirect("/notice/list");
 		}else {
-			//실패
+			//실패시 에러페이지로 이동!!
 			NavigationUtil.navigateToError(request, response, "500", "서비스가 완료되지않았습니다");
 		}
 	}

@@ -5,7 +5,7 @@
 
 <configuration>
 	<settings>
-		<!-- 널 값이 발생할 경우 빈칸이 아닌 null로 인식하라 -->
+		<!-- 널 값이 발생할 경우 빈칸이 아닌 null로 인식하라?? -->
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 	<typeAliases>

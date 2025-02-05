@@ -6,10 +6,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>제주의 꿈 - 공지사항 목록</title>
-		<link rel="stylesheet" href="../resources/css/reset.css">
-		   <link rel="stylesheet" href="../resources/css/header.css">
-		   <link rel="stylesheet" href="../resources/css/footer.css">
-		   <link rel="stylesheet" href="../resources/css/list.css">
+			<link rel="stylesheet" href="../resources/css/reset.css">
+		   	<link rel="stylesheet" href="../resources/css/header.css">
+		   	<link rel="stylesheet" href="../resources/css/footer.css">
+		   	<link rel="stylesheet" href="../resources/css/list.css">
 	</head>
 	<body>
 		<div id="container">
@@ -32,8 +32,6 @@
 					<th class="views">조회수</th>
 				</tr>
 			</thead>
-		
-		
 			<tbody>
 			<c:forEach items="${nList }" var="notice">
 				<tr>
@@ -55,7 +53,6 @@
 			<a href="#">5</a>
 			<a href="#" class="next">&gt;</a>
 			</div>
-
 		</section>
 		</main> 
 		 <jsp:include page="/WEB-INF/views/include/footer.jsp" /> 

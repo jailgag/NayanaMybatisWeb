@@ -18,12 +18,19 @@
 		INSERT INTO NOTICE_TBL
 		VALUES(SEQ_NOTICE_NO.NEXTVAL, #{noticeSubject},  #{noticeContent}, #{noticeWriter}, DEFAULT,DEFAULT,#{attchmentName},#{attchmentPath},DEFAULT)
 	</insert>
+	<update id="updateNotice">
+		UPDATE NOTICE_TBL SET NOTICE_SUBJECT = #{noticeSubject},NOTICE_CONTENT = #{noticeContent} WHERE NOTICE_NO = #{noticeNo}
+	</update>
 	<delete id="deleteNotice">
 		DELETE FROM NOTICE_TBL WHERE NOTICE_NO = #{noticeNo}
 	</delete>
 	<select id="selectList" resultMap="noticeResultMap" >
 		SELECT * FROM NOTICE_TBL ORDER BY NOTICE_NO DESC
 	</select>
+	
+	<!-- 아래 공지사항 전체조회
+	주의사항 SELECT절에는 반드시 resultMap=noticeResultMap
+	이 반드시 들어간다 -->
 	<select id="selectOneByNo" resultMap="noticeResultMap">
 		SELECT * FROM NOTICE_TBL WHERE NOTICE_NO = #{noticeNo}
 	</select>
