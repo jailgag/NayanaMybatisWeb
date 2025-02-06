@@ -39,7 +39,7 @@ public class DetailServlet extends HttpServlet {
 		//detail.jsp에서 데이터가 출력되도록함
 		
 		NoticeService nService = new NoticeService();
-		//아래 Int형의쿼리스트링 코드
+		//아래 Int형의쿼리스트링 
 		int noticeNo = (request.getParameter("noticeNo") != null)
 				? Integer.parseInt(request.getParameter("noticeNo")) : 1; 
 //		int noticeNo = Integer.parseInt(request.getParameter("noticeNo"));

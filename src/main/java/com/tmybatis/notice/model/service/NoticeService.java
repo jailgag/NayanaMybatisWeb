@@ -27,9 +27,9 @@ public class NoticeService {
 		return result;
 	}
 	//ListServlet에서 넘어옴!!(공지사항조회)
-	public List<Notice> selectListAll() {
+	public List<Notice> selectListAll(int currentPage) {
 		// TODO Auto-generated method stub
-		List<Notice> nList = nDao.selectList(session);
+		List<Notice> nList = nDao.selectList(session, currentPage);
 		return nList;
 	}
 	//3.DetailServlet에서 넘어왔고 !!!공지사항 상세조회!!!

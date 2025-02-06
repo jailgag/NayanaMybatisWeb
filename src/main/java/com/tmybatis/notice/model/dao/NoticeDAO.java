@@ -17,10 +17,15 @@ public class NoticeDAO {
 		return result;
 	}
 	//Service에서 넘어옴!!!공지사항 조회!!02/04~5일 강의!!
-	public List<Notice> selectList(SqlSession session) {
+	public List<Notice> selectList(SqlSession session, int currentPage) {
 		// TODO Auto-generated method stub
-		int offset =0 ;
+		//int offset =0을 10으로 바꿈 ;
+		//currentPage가 1이면 offset은 0
+		//currentPage가 2이면 offset은 10
+		//currentPage가 3이면 offset은 20
+		
 		int limit = 10;
+		int offset = (currentPage-1)*limit;
 		RowBounds rowBounds = new RowBounds(offset, limit);
 		//이아래코드는 rowBounds 적용전과 후 코드!!주석처리함!주석처리한건(5일강의때 차순정리하는코드작성후)남겨둠!!
 //		List<Notice> nList = session.selectList("NoticeMapper.selectList");
