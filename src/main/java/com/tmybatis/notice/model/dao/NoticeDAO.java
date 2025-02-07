@@ -49,5 +49,11 @@ public class NoticeDAO {
 		int result = session.update("NoticeMapper.updateNotice", notice);
 		return result;
 	}
+	public int getTotalCount(SqlSession session) {
+		// TODO Auto-generated method stub
+		int totalCount = session.selectOne("NoticeMapper.getTotalCount");
+		return totalCount;
+	}
+	
 
 }

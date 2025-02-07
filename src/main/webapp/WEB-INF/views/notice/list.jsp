@@ -58,15 +58,18 @@
 			</tbody>
 		</table>
 			<div class="pagination">
-			<a href="#" class="prev">&lt;</a>
+			<!--  
+			404에러 떠서 오타수정후 정상작동하나 < 여기는 404뜸
+			/ 오입력!!-->
+			<c:if test="${startNavi ne 1 }">
+				<a href="/notice/list?currentPage=${startNavi -1 }" class="prev">&lt;</a>
+			</c:if>
 			<c:forEach begin="${startNavi }" end="${endNavi}" var="p">
 			<a href="/notice/list?currentPage=${p }">${p }</a>
 			</c:forEach>
-			<!--  <a href="/notice/list?currentPage=2">2</a>
-			<a href="/notice/list?currentPage=3">3</a>
-			<a href="/notice/list?currentPage=4">4</a>
-			<a href="/notice/list?currentPage=5">5</a>  -->
-			<a href="#" class="next">&gt;</a>
+			<c:if test="${endNavi ne maxPage }">
+				<a href="/notice/list?currentPage=${endNavi +1 }" class="next">&gt;</a>
+			</c:if>
 			</div>
 		</section>
 		</main> 

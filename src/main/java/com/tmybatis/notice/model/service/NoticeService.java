@@ -48,10 +48,15 @@ public class NoticeService {
 	}
 	//
 	public int updateNotice(Notice notice) {
-int result = nDao.updateNotice(session,notice);
-		
+		int result = nDao.updateNotice(session,notice);
 		return result;
 	}
-	
+
+	public int getTotalCount() {
+		// TODO Auto-generated method stub
+		int totalCount = nDao.getTotalCount(session);
+		return totalCount;
+	}
+
 		
 }

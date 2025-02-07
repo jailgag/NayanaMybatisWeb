@@ -37,8 +37,9 @@ public class ListServlet extends HttpServlet {
 		//endNavi의 최대값이 전체 게시물에 따라서 달라질수 있음
 		//ex) 전체 게시물에의 갯수가 232개이고 1페이지당 10개씩 보여준다 하면
 		//endNavi의 최대값은 24가됨 -> 이것을 식으로 써서 전체 게시물이 변경될때마다 달라지도록 해야함
-		
-		int totalCount = 233;
+		//내꺼데이터는 233개라서 int totalCount = 233; 입력!
+		int totalCount = nService.getTotalCount();
+		//int totalCount = 233;
 		int boardLimit =10;
 		//아래식은 소수점으로 되니깐 더블을 쓰되 강제형변환을 해줘야한다?
 		int maxPage =(int)Math.ceil((double)totalCount/boardLimit);;
@@ -68,6 +69,7 @@ public class ListServlet extends HttpServlet {
 			request.setAttribute("nList", nList);
 			request.setAttribute("startNavi",startNavi );
 			request.setAttribute("endNavi", endNavi);
+			request.setAttribute("maxPage", maxPage);
 			request.getRequestDispatcher("/WEB-INF/views/notice/list.jsp")
 			.forward(request, response);
 		}else {
