@@ -42,7 +42,7 @@ public class ListServlet extends HttpServlet {
 		//int totalCount = 233;
 		int boardLimit =10;
 		//아래식은 소수점으로 되니깐 더블을 쓰되 강제형변환을 해줘야한다?
-		int maxPage =(int)Math.ceil((double)totalCount/boardLimit);;
+		int maxPage =(int)Math.ceil((double)totalCount/boardLimit);
 		
 //		maxPage = (totalCount%boardLimit > 0) 
 //				? boardLimit / boardLimit+1 

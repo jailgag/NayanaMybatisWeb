@@ -42,4 +42,8 @@
 		SELECT * FROM NOTICE_TBL WHERE NOTICE_NO = #{noticeNo}
 	</select>
 	
+	<select id="selectSearchList" resultMap="noticeResultMap">
+		SELECT * FROM NOTICE_TBL WHERE NOTICE_SUBJECT LIKE '%'||#{searchKeyword}||'%'
+	</select>
+	
 </mapper>

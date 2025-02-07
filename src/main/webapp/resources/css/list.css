@@ -16,6 +16,49 @@ main {
 	color: #045;
 }
 
+/* 검색폼 스타일 추가*/
+.search-container{
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom:20px;
+}
+
+.search-form{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.search-select {
+	padding: 8px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	outline: none;
+}
+
+.search-input{
+	padding: 8px 12px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	width: 200px;
+	outline:none;
+}
+
+.search-button{
+	padding: 8px 16px;
+	background-color: #045;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color
+}
+
+.search-button:hover {
+	background-color: #034;
+}
+/*검색 폼 스타일 끝*/
+
 .notice-table{
 	width: 100%;
 	border-collapse: collapse;

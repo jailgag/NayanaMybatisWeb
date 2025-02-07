@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.tmybatis.member.common.SqlSessionTemplate;
 import com.tmybatis.notice.model.dao.NoticeDAO;
 import com.tmybatis.notice.model.vo.Notice;
+import com.tmybatis.notice.model.vo.SearchVO;
 
 public class NoticeService {
 
@@ -56,6 +57,11 @@ public class NoticeService {
 		// TODO Auto-generated method stub
 		int totalCount = nDao.getTotalCount(session);
 		return totalCount;
+	}
+	//02/07
+	public List<Notice> selectSearchList(SearchVO search) {
+		List<Notice> searchList = nDao.selectSearchList(session, search);
+		return searchList;
 	}
 
 		

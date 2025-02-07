@@ -19,7 +19,7 @@
 		<section class="board-title">
 		<h1>공지사항</h1>
 		</section>
-		<div class="search">
+		<div class="search-container">
 			<form class="search-form"  action="/notice/search" method="get"">
 				<select class="search-select" name="searchCondition">
 					<option value="title">제목</option>
@@ -58,9 +58,9 @@
 				아래 코드로 하니 공지사항 번호가 10~시작?
 				<td class="num">${nList.size() - i.index }
 				 -->
-			<c:forEach items="${nList }" var="notice" varStatus="i">
+			<c:forEach items="${searchList }" var="notice" varStatus="i">
 				<tr>
-					<td class="num">${nList.size() - i.index }</td>
+					<td class="num">${searchList.size() - i.index }</td>
 					<td class="title"><a href="/notice/detail?noticeNo=${notice.noticeNo }">"${notice.noticeSubject }</a></td>
 					<td class="writer">${notice.noticeWriter }</td>
 					<td class="date">${notice.writeDate }</td>

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import com.tmybatis.notice.model.vo.Notice;
+import com.tmybatis.notice.model.vo.SearchVO;
 
 public class NoticeDAO {
 	
@@ -53,6 +54,10 @@ public class NoticeDAO {
 		// TODO Auto-generated method stub
 		int totalCount = session.selectOne("NoticeMapper.getTotalCount");
 		return totalCount;
+	}
+	public List<Notice> selectSearchList(SqlSession session, SearchVO search) {
+		List<Notice> searchList = session.selectList("NoticeMapper.selectSearchList",search);
+		return searchList;
 	}
 	
 
